@@ -27,4 +27,15 @@ recieve and transmit data.**
 **Side Note:** Not that it will make any difference, but I will be using a raspberry pi 5 rather than a pi 4.
 
 
+### Repository Structure
+```sh
+/spi-can-pi4-drivers
+├── docs
+│   └── MCP25625-CAN-Controller-Data-Sheet-20005282C.pdf
+├── README.md
+└── src
+
+3 directories, 2 files
+```
+
 See [Cal Poly FSAE](https://github.com/CalPolyFSAE/)
