@@ -15,7 +15,7 @@ official document goes as follows:
 `CAN <--  --> MCP25625 <--  --> CAN data over SPI <--- ---> RPI recieves data`
 
 **Documentation states to use SocketCAN in the kernal on the raspberry pi 4 to
-recieve and transmit data. 
+recieve and transmit data.** 
 
 ### CAN Chips
 
