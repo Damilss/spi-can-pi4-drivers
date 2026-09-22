@@ -5,7 +5,20 @@
 
 ## Objetive
 **Write/Find functions to initialize, write, and read data using the SPI 
-peripherals from the Pi. This is in C++**
+.
+├── docs
+│   ├── can20.pdf
+│   ├── MCP25625-CAN-Controller-Data-Sheet-20005282C.pdf
+│   ├── mcp25625-click-schematic-v100.pdf
+│   └── Screenshot 2026-09-22 at 1.44.57 PM.png
+├── README.md
+└── src
+    ├── CANStructs.h
+    ├── dataIntake.cpp
+    ├── dataIntake.h
+    └── pican.cpp
+
+3 directories, 9 filesperipherals from the Pi. This is in C++**
 
 ### workflow and overveiw
 
@@ -31,11 +44,18 @@ recieve and transmit data.**
 ```sh
 /spi-can-pi4-drivers
 ├── docs
-│   └── MCP25625-CAN-Controller-Data-Sheet-20005282C.pdf
+│   ├── can20.pdf
+│   ├── MCP25625-CAN-Controller-Data-Sheet-20005282C.pdf
+│   ├── mcp25625-click-schematic-v100.pdf
+│   └── Screenshot 2026-09-22 at 1.44.57 PM.png
 ├── README.md
 └── src
+    ├── CANStructs.h
+    ├── dataIntake.cpp
+    ├── dataIntake.h
+    └── pican.cpp
 
-3 directories, 2 files
+3 directories, 9 files
 ```
 
 See [Cal Poly FSAE](https://github.com/CalPolyFSAE/)
