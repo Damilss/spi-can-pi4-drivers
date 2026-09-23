@@ -19,7 +19,7 @@ run `scripts/can0-testing/loopback-test.sh`.
 
 then in a separate window, 
 
-run `sendcanframe.sh`
+run `scripts/can0-testing/sendcanframe.sh`
 
 You should see the frame echoed back by `candump` in the first window you opened
 if it worked.
