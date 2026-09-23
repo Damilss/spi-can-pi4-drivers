@@ -3,22 +3,45 @@
 > This project is based for the Cal Poly FSAE New member project for the firmware
 > subsystem. Ultimately decided not to make it in the org and just on my personal
 
+> Tip: Use TAB to autocomplete certain command in your terminal, this will help navigating `./scripts`! 
 ## Objetive
 **Write/Find functions to initialize, write, and read data using the SPI 
-.
+
+## Repo Structure
+
+/spi-can-pi4-drivers
 ├── docs
+│   ├── can0-setup.md
+│   ├── can0-testing.md
 │   ├── can20.pdf
+│   ├── GPIO-pin-guide.png
 │   ├── MCP25625-CAN-Controller-Data-Sheet-20005282C.pdf
 │   ├── mcp25625-click-schematic-v100.pdf
-│   └── Screenshot 2026-09-22 at 1.44.57 PM.png
+│   ├── raspberry-pi-wifi-cheatsheet.md
+│   ├── spi-setup.md
+│   └── vcan0-setup.md
 ├── README.md
+├── scripts
+│   ├── can0-setup
+│   │   ├── 20k-enable-can.sh
+│   │   ├── enable-can.sh
+│   │   ├── install-reboot.sh
+│   │   └── verifytools.sh
+│   ├── can0-testing
+│   │   ├── checkinterrupts.sh
+│   │   ├── loopback-test.sh
+│   │   ├── sendcanframe.sh
+│   │   └── test.sh
+│   ├── check-active-networkmanagers.sh
+│   ├── checkbusstate.sh
+│   └── systemd-networkd-config.sh
 └── src
     ├── CANStructs.h
     ├── dataIntake.cpp
     ├── dataIntake.h
     └── pican.cpp
 
-3 directories, 9 filesperipherals from the Pi. This is in C++**
+6 directories, 25 files
 
 ### workflow and overveiw
 
@@ -38,24 +61,5 @@ recieve and transmit data.**
 
 
 **Side Note:** Not that it will make any difference, but I will be using a raspberry pi 5 rather than a pi 4.
-
-
-### Repository Structure
-```sh
-/spi-can-pi4-drivers
-├── docs
-│   ├── can20.pdf
-│   ├── MCP25625-CAN-Controller-Data-Sheet-20005282C.pdf
-│   ├── mcp25625-click-schematic-v100.pdf
-│   └── Screenshot 2026-09-22 at 1.44.57 PM.png
-├── README.md
-└── src
-    ├── CANStructs.h
-    ├── dataIntake.cpp
-    ├── dataIntake.h
-    └── pican.cpp
-
-3 directories, 9 files
-```
 
 See [Cal Poly FSAE](https://github.com/CalPolyFSAE/)
