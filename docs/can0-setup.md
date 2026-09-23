@@ -19,10 +19,10 @@ see `GPIO-pin-guide.png` for photo reference
 
 ### 3. add configuration to firmware config
 
-Oscilloscope: 16k
+Oscilloscope: 16 MHz
 run `sudo scripts/can0-setup/enable-can.sh` and follow instructions
 
-Oscilloscope: 20k
+Oscilloscope: 20 MHz
 run `sudo scripts/can0-setup/20k-enable-can.sh` and follow instructions.
 > (20k might be needed for this chip, check schematic)
 
