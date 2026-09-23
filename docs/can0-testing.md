@@ -62,7 +62,7 @@ The interrupt isn't reaching the Pi. Check that INT goes to GPIO25, or that inte
 **to see the bus state and error counters RUN:**
 
 ```sh
-scripts/checkbussstate.sh 
+scripts/checkbusstate.sh 
 ```
 
 ### testing (no loopback mode)
