@@ -7,7 +7,7 @@
 set -euo pipefail
 
 # see `/docs/can0-testing.md` for more info
- sudo tee /etc/systemd/network/80-can0.network <<'EOF'
+sudo tee /etc/systemd/network/80-can0.network <<'EOF'
 [Match]
 Name=can0
 
