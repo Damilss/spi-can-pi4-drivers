@@ -1,5 +1,6 @@
 #!/bin/bash
 
-# sendcanframe
+# sendcanframe.sh
 # self explanatory
 
+cansend can0 123#DEADBEEF
