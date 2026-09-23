@@ -8,7 +8,7 @@
 **Write/Find functions to initialize, write, and read data using the SPI 
 
 ## Repo Structure
-
+```sh
 /spi-can-pi4-drivers
 ├── docs
 │   ├── can0-setup.md
@@ -42,6 +42,8 @@
     └── pican.cpp
 
 6 directories, 25 files
+
+```
 
 ### workflow and overveiw
 
