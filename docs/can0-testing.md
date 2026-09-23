@@ -90,7 +90,7 @@ made the round trip through the controller and was received back locally.
 
 ### getting intterupts
 
-run `scipts/can0-testing.sh/checkinterrupts.sh` to check interrupts
+run `scripts/can0-testing.sh/checkinterrupts.sh` to check interrupts
 
 You'll get something like 
 
