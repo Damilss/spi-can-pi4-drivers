@@ -9,9 +9,9 @@ set -euo pipefail
 # /proc/interrupts is roughlt structered like
 # IRQ:   CPU0   CPU1   CPU2   CPU3   interrupt-controller ... device 
 # CPU0-3 is where the interrupts appear
-grep spi0 /proc/interrupts
+if ! grep spi0 /proc/interrupts; then
+	echo 'No spi0 interrupt entry found; see docs/can0-testing.md for more info'
+fi
 
-
-echo 'see docs/can0-testing.md for more info' 
 exit 0
 
