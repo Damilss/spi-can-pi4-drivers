@@ -12,28 +12,6 @@
 #include <linux/can.h>
 #include <linux/can/raw.h>
 
-#include "dataIntake.h"
-
-//used for testing
-int main() {
-    SocketCANDevice can("can0");
-
-    while (true) {
-        can_frame frame{};
-
-        if (can.readCANMessage(frame)) {
-            printf("ID: 0x%03X  len: %d  Data:",
-                   frame.can_id & CAN_SFF_MASK,
-                   frame.len);
-
-            for (int i = 0; i < frame.len; ++i) {
-                printf(" %02X", frame.data[i]);
-            }
-            printf("\n");
-        }
-    }
-}
-
 class SocketCANDevice{
     private:
         int socketFD;
@@ -97,3 +75,37 @@ class SocketCANDevice{
             return true;
         }
 };
+
+
+//used for testing
+int main() {
+    SocketCANDevice can("can0");
+
+    for(int i = 0; i < 100; i++) {
+        can_frame writeFrame{};
+
+        writeFrame.can_id = 0x001;
+        writeFrame.len = 5;
+
+        writeFrame.data[0] = 0xDE;
+        writeFrame.data[1] = 0xAD;
+        writeFrame.data[2] = 0xBE;
+        writeFrame.data[3] = 0xEF;
+        writeFrame.data[4] = static_cast<uint8_t>(i);
+
+        can.writeCANMessage(writeFrame);
+
+        can_frame frame{};
+
+        if (can.readCANMessage(frame)) {
+            printf("ID: 0x%03X  len: %d  Data:",
+                   frame.can_id & CAN_SFF_MASK,
+                   frame.len);
+
+            for (int i = 0; i < frame.len; ++i) {
+                printf(" %02X", frame.data[i]);
+            }
+            printf("\n");
+        }
+    }
+}
