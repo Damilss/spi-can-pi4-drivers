@@ -29,20 +29,12 @@ comment="# enable-can ran on "$DATE", remove to disable CAN"
 line1='dtparam=spi=on'
 line2='dtoverlay=mcp2515-can0,oscillator=20000000,interrupt=25'
 
-#creates temp file
-tmpfile=$(mktemp)
-trap 'rm -f "$tmpfile"' EXIT
+# Exit if either CAN config line already exists
+if grep -qxF "$line1" "$CONFIG" || grep -qxF "$line2" "$CONFIG"; then
+	echo 'config.txt already contains one or more lines for enabling CAN'
+	exit 1
+fi
 
-cat /boot/firmware/config.txt | grep "dtparam=spi=on|dtoverlay=mcp2515-can0,oscillator=20000000,interrupt=25" > "$tmpfile"
-
-# if config lines already exits, exits script
- if [[ -s "$tmpfile" ]]; then
-	 echo 'config.txt already contains one or more lines for enabling-can'
-	 exit 1
- fi
-
-# inserts config
-echo >> "$CONFIG" && echo "$comment" >> "$CONFIG" && echo "$line1" >> "$CONFIG"
-echo "$line2" >> "$CONFIG" && echo >> "$CONFIG"
-
+# Insert CAN configuration
+printf '\n%s\n%s\n%s\n\n' "$comment" "$line1" "$line2" >> "$CONFIG"
 exit 0
