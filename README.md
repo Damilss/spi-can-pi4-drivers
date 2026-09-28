@@ -5,7 +5,7 @@
 
 > Tip: Use TAB to autocomplete certain command in your terminal, this will help navigating `./scripts`! 
 ## Objective
-**Write/Find functions to initialize, write, and read data using the SPI 
+**Write/Find functions to initialize, write, and read data using the SPI**
 
 ## Repo Structure
 ```sh
