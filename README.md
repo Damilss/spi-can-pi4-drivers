@@ -1,10 +1,10 @@
 # spi-can-pi4-drivers
 
-> This project is based for the Cal Poly FSAE New member project for the firmware
-> subsystem. Ultimately decided not to make it in the org and just on my personal
+> This project is based for the Cal Poly FSAE project for the firmware
+> subsystem. 
 
 > Tip: Use TAB to autocomplete certain command in your terminal, this will help navigating `./scripts`! 
-## Objetive
+## Objective
 **Write/Find functions to initialize, write, and read data using the SPI 
 
 ## Repo Structure
@@ -60,8 +60,7 @@ recieve and transmit data.**
 | Transiever Chip | Chip details |
 | ---- | ----- | 
 | [MCP25625](./docs/MCP25625-CAN-Controller-Data-Sheet-20005282C.pdf) |  CAN 2.0 Only, integrated transceiver functionality (RXCAN and TXCAN to CANL/CANH, Maximum payload is 8 bytes per frame |   
-
-
-**Side Note:** Not that it will make any difference, but I will be using a raspberry pi 5 rather than a pi 4.
+|[mcp25625-click](./docs/mcp25625-click-schematic-v100.pdf) | Current MCP25625 integrated transciever and controller that we're using for testing | 
 
 See [Cal Poly FSAE](https://github.com/CalPolyFSAE/)
+
