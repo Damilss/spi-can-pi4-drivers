@@ -10,6 +10,7 @@
 ## Repo Structure
 ```sh
 /spi-can-pi4-drivers
+├── CONTRIBUTING.md
 ├── docs
 │   ├── can0-setup.md
 │   ├── can0-testing.md
@@ -18,7 +19,13 @@
 │   ├── MCP25625-CAN-Controller-Data-Sheet-20005282C.pdf
 │   ├── mcp25625-click-schematic-v100.pdf
 │   ├── raspberry-pi-wifi-cheatsheet.md
+│   ├── reports
+│   │   ├── 2026-09-23
+│   │   │   └── pi_config_9_23.md
+│   │   ├── README_TEMPLATE.md
+│   │   └── README.md
 │   ├── spi-setup.md
+│   ├── src-pican-cpp.md
 │   └── vcan0-setup.md
 ├── README.md
 ├── scripts
@@ -40,8 +47,6 @@
     ├── dataIntake.cpp
     ├── dataIntake.h
     └── pican.cpp
-
-6 directories, 25 files
 
 ```
 
