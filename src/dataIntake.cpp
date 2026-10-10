@@ -1,10 +1,12 @@
 #include "dataIntake.h"
 
+//These includes are designed for STMcarcode repo, ignore inaccuracies 
 #include "../../../shared/common/CANStructs.h"
 #include "../../../shared/common/circlequeue.h"
 #include "../../../shared/common/peripherals/rtc.h"
 #include "../../../shared/drivers/rtos/FreeRTOS.h"
 #include "../../../shared/drivers/rtos/task.h"
+
 #include <string.h>
 
 CircleQueue<intakeStruct, DATA_BUFFER_SIZE> dataQueue;

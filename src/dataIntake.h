@@ -1,16 +1,24 @@
 #ifndef __DATA_INTAKE_H
 #define __DATA_INTAKE_H
 
-#include "../../../shared/common/CANStructs.h"
-#include "../../../shared/drivers/rtos/FreeRTOS.h"
-#include "../../../shared/drivers/rtos/task.h"
+// #includes directory mappping for STMcarcode
+// We can adjust as needed
+#include "../../../../shared/common/CANStructs.h"
+#include "../../../../shared/drivers/rtos/FreeRTOS.h"
+#include "../../../../shared/drivers/rtos/task.h"
 
+// On PI; don't worry about errors here
 #include <linux/can.h>
 #include <linux/can/raw.h>
 
-#define DATA_BUFFER_SIZE 2400 //how many 8 byte messages can be stored
-#define MAX_PAYLOAD_FRAME_SIZE 18 //maximum message length header + data
-#define PAYLOAD_BUFFER_SIZE DATA_BUFFER_SIZE * MAX_PAYLOAD_FRAME_SIZE //how large the buffer should be
+//how many 8 byte messages can be stored
+#define DATA_BUFFER_SIZE 2400
+
+//maximum message length header + data
+#define MAX_PAYLOAD_FRAME_SIZE 18 
+
+//how large the buffer should be
+#define PAYLOAD_BUFFER_SIZE DATA_BUFFER_SIZE * MAX_PAYLOAD_FRAME_SIZE 
 
 typedef struct {
     uint16_t id;
