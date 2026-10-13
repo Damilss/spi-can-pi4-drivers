@@ -1,33 +1,39 @@
 #include "main.h"
 
+#include "dataIntake.h"
+#include "../../../../shared/drivers/cm4/can.h"
+
 int main()
 {
-    const char* socketPath = "/tmp/gateway.sock";
+    const char* socketPath = "/tmp/ccm.sock";
     int server = joinSocket(socketPath);
     if(server < 0){
-            return 1;
-        }
-    uint8_t sendbuf[MSG_BUF_SIZE];
-
-    for(;;){
-	    /*
-	     * this is where all propegation will happen
-	     * will rx data from:
-	     * spi
-	     * will send to long
-	     */
-
-	    dataPayload payload;
-
-	    // need to look into who MCP25625 formats data
-	    // pack the paylaod and send it to main process
-
-	    packMessage();
-	    send();
-	    printf("oh im sending\n");
+        return 1;
     }
 
-    close(sever);
-    return 0; 
-}
+    uint8_t sendbuf[MSG_BUF_SIZE];
 
+    for (;;){
+
+        /*
+        this is where all propegation will happen
+        will recv data from:
+        - SPI
+        will send to:
+        - LOG
+
+        read data from 3 spi peripherals
+        pack data
+        send to log
+
+        poll(0)
+        if recv data from ccm, send it over CAN
+        */
+
+        packMessage(CAN, LOG, 0, 0, 0, NULL, (ipcHeader*)sendbuf);
+        send(server, sendbuf, sizeof(ipcHeader), 0);
+    }
+
+    close(server);
+    return 0;
+}
