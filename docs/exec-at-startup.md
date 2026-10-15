@@ -43,4 +43,6 @@ journalctl -u can-reader.service -f
 
 `journalctl ...` command follows logs in real time
 
+## 3. stop program for whatever reason
 
+`sudo systemctl stop can-reader.service`
