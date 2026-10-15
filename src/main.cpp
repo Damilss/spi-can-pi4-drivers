@@ -1,6 +1,8 @@
 #include "main.h"
 
 #include "dataIntake.h"
+
+// This should point to our current drivers, not from STMcarcode
 #include "../../../../shared/drivers/cm4/can.h"
 
 int main()
