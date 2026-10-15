@@ -5,6 +5,10 @@
  *
  * test file for socketCAN drivers for Rapsberrypi CM4, see
  * boards/Logger/CAN/docs for more information
+ *
+ * Please note that for testing, this program does not actual run through
+ * of dataIntake.h, and dataIntake is not tested, only a segmented block
+ * from dataIntake was copied and pasted into this function.
  * 
  */
 
