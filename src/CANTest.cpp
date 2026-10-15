@@ -67,7 +67,8 @@ int main() {
             		uint64_t ns_to_ms = (uint64_t)ts.tv_nsec;
 
             		uint64_t timestamp = sec_to_ms + ns_to_ms;
-
+			
+			// PRIu64 is format for uint64_t, instead of just normal %d
             		printf("ID: 0x%03X  len: %d  timestamp: %" PRIu64 ", Data:",
 			frame.can_id & CAN_SFF_MASK,
 			frame.len,
