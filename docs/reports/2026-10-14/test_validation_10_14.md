@@ -50,10 +50,12 @@ On a semi-positive positive note, the independent drivers we created were able t
 
 The most eccentric part of this all is after merely changing the oscillator frequency value, the whole interface disappeared. and when we changed it back to 16mhz it still was gone. That is really what's throwing me off and it seems to me it has to be something with the hardware.
 
+## Issues / Observations
+
 ## Conclusion
 
 ## Next steps
 
 
-## Attachments
+## Attachments / References
 
