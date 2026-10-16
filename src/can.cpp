@@ -26,7 +26,7 @@
 
 // Constuctor Definition for SocketCANDevice
 SocketCANDevice::SocketCANDevice (const char *canbusName){
-	
+
 	//create socket (this is for RAW can)
 	if (((socketFD = socket(PF_CAN, SOCK_RAW, CAN_RAW)) < 0)){
 		perror("SocketCANDevice(): creating socket failed");
@@ -59,13 +59,13 @@ SocketCANDevice::SocketCANDevice (const char *canbusName){
 		perror("SocketCANDevice(): binding socket failed");
 		throw std::runtime_error(
 				"SocketCANDevice(): binding socket failed"
-				);	
+				);
 	}
 }
 
 bool SocketCANDevice::readCANMessage(struct can_frame &frame){
 
-	// read the data (the frame passed will get data)	
+	// read the data (the frame passed will get data)
 	int status = read(socketFD, &frame, sizeof(frame));
 
 	//check status for err
@@ -76,7 +76,7 @@ bool SocketCANDevice::readCANMessage(struct can_frame &frame){
 			);
 		return false;
 	}
-	
+
 	return true;
 }
 

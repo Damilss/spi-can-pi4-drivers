@@ -31,7 +31,7 @@ class SocketCANDevice{
 		 * 		and uses it as the SocketCanDevice name
 		 */
 		SocketCANDevice(const char *canbusName);
-		
+
 		/**
 		 * readCANMessage() reads a data from a specified CAN
 		 * socket
@@ -40,9 +40,9 @@ class SocketCANDevice{
 		 * @return: bool, for if the message was
 		 * 		successfully read from the specified
 		 * 		socket or not
-		 */	
+		 */
 		bool readCANMessage(struct can_frame &frame);
-		
+
 		/**
 		 * WriteCANMessage writes a can_frame to a specified Socket
 		 * @param: struct can_frame frame, this is the can_frame
