@@ -10,15 +10,18 @@
 ## Repo Structure
 ```sh
 /spi-can-pi4-drivers
+├── compile_flags.txt
 ├── CONTRIBUTING.md
 ├── docs
 │   ├── can0-setup.md
 │   ├── can0-testing.md
 │   ├── can20.pdf
-│   ├── GPIO-pin-guide.png
-│   ├── MCP25625-CAN-Controller-Data-Sheet-20005282C.pdf
-│   ├── mcp25625-click-schematic-v100.pdf
+│   ├── exec-at-startup.md
 │   ├── raspberry-pi-wifi-cheatsheet.md
+│   ├── refs
+│   │   ├── GPIO-pin-guide.png
+│   │   ├── MCP25625-CAN-Controller-Data-Sheet-20005282C.pdf
+│   │   └── mcp25625-click-schematic-v100.pdf
 │   ├── reports
 │   │   ├── 2026-09-23
 │   │   │   └── pi_config_9_23.md
@@ -43,11 +46,15 @@
 │   ├── checkbusstate.sh
 │   └── systemd-networkd-config.sh
 └── src
-    ├── CANStructs.h
+    ├── can.cpp
+    ├── can.h
+    ├── CANTest.cpp
     ├── dataIntake.cpp
     ├── dataIntake.h
-    └── pican.cpp
+    ├── main.cpp
+    └── main.h
 
+9 directories, 35 files
 ```
 
 ### workflow and overveiw
