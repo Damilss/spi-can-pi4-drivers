@@ -7,35 +7,35 @@
 
 int main()
 {
-    const char* socketPath = "/tmp/ccm.sock";
-    int server = joinSocket(socketPath);
-    if(server < 0){
-        return 1;
-    }
+	const char* socketPath = "/tmp/ccm.sock";
+	int server = joinSocket(socketPath);
+	if(server < 0){
+		return 1;
+	}
 
-    uint8_t sendbuf[MSG_BUF_SIZE];
+	uint8_t sendbuf[MSG_BUF_SIZE];
 
-    for (;;){
+	for (;;){
 
-        /*
-        this is where all propegation will happen
-        will recv data from:
-        - SPI
-        will send to:
-        - LOG
+		/*
+		this is where all propegation will happen
+		will recv data from:
+		- SPI
+		will send to:
+		- LOG
 
-        read data from 3 spi peripherals
-        pack data
-        send to log
+		read data from 3 spi peripherals
+		pack data
+		send to log
 
-        poll(0)
-        if recv data from ccm, send it over CAN
-        */
+		poll(0)
+		if recv data from ccm, send it over CAN
+		*/
 
-        packMessage(CAN, LOG, 0, 0, 0, NULL, (ipcHeader*)sendbuf);
-        send(server, sendbuf, sizeof(ipcHeader), 0);
-    }
+		packMessage(CAN, LOG, 0, 0, 0, NULL, (ipcHeader*)sendbuf);
+		send(server, sendbuf, sizeof(ipcHeader), 0);
+	}
 
-    close(server);
-    return 0;
+	close(server);
+	return 0;
 }

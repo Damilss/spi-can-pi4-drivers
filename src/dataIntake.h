@@ -14,13 +14,13 @@
 #include <linux/can.h>
 
 // how many can frames can be stored
-#define DATA_BUFFER_SIZE 2400 
+#define DATA_BUFFER_SIZE 2400
 
 // maximum message length header + data + timestamp
 #define MAX_PAYLOAD_FRAME_SIZE 18
 
 // how large the buffer should be
-#define PAYLOAD_BUFFER_SIZE (DATA_BUFFER_SIZE * MAX_PAYLOAD_FRAME_SIZE) 
+#define PAYLOAD_BUFFER_SIZE (DATA_BUFFER_SIZE * MAX_PAYLOAD_FRAME_SIZE)
 
 /**
  * intakeStruct is a formatted way to hold all the data from the can_frame
@@ -37,15 +37,15 @@
  * intakeMessage())
  */
 typedef struct {
-    uint16_t id;
-    uint8_t dlc;
-    uint8_t data[8];
-    uint64_t eTime;
+	uint16_t id;
+	uint8_t dlc;
+	uint8_t data[8];
+	uint64_t eTime;
 } intakeStruct;
 
 /**
  * intakeMessage formats inputted can_frame *message and adds message to a set
- * queue, if buffer is full, overwrites and returns the last item and 
+ * queue, if buffer is full, overwrites and returns the last item and
  * continues to enqueue specified item. If inputted CAN frame is extended
  * format, return and don't intake it, this could cause formatting issues
  * with the ID and give botched data. Possible future implementation would
@@ -64,12 +64,12 @@ void intakeMessage(can_frame* message);
  * pushing as much data onto the clients as posssible.
  * One payload frame is 10-18 bytes, depending on data frame size
  *
- * Header - 2 bytes, combining the id, which are bits 5-15, and dlc, 
+ * Header - 2 bytes, combining the id, which are bits 5-15, and dlc,
  * which are bits 1-4, bit 0 is always unset
  *
  * data - variable from 0-8 bytes set by the dlc
  *
- * eTime - 8 bytes, is the time in ms since unix epoch 
+ * eTime - 8 bytes, is the time in ms since unix epoch
  *
  * @return: uint32_t, returns the new size of the paylaad after packing
  */
