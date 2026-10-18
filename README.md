@@ -10,6 +10,7 @@
 ## Repo Structure
 ```sh
 /spi-can-pi4-drivers
+├── .clang-format
 ├── compile_flags.txt
 ├── CONTRIBUTING.md
 ├── docs
@@ -25,11 +26,13 @@
 │   ├── reports
 │   │   ├── 2026-09-23
 │   │   │   └── pi_config_9_23.md
-│   │   ├── README_TEMPLATE.md
-│   │   └── README.md
+│   │   ├── README.md
+│   │   └── README_TEMPLATE.md
 │   ├── spi-setup.md
 │   ├── src-pican-cpp.md
 │   └── vcan0-setup.md
+├── .editorconfig
+├── .gitignore
 ├── README.md
 ├── scripts
 │   ├── can0-setup
@@ -45,19 +48,19 @@
 │   ├── check-active-networkmanagers.sh
 │   ├── checkbusstate.sh
 │   └── systemd-networkd-config.sh
-└── src
-    ├── can.cpp
-    ├── can.h
-    ├── CANTest.cpp
-    ├── dataIntake.cpp
-    ├── dataIntake.h
-    ├── main.cpp
-    └── main.h
+├── src
+│   ├── can.cpp
+│   ├── can.h
+│   ├── CANTest.cpp
+│   ├── dataIntake.cpp
+│   └── dataIntake.h
+└── .vscode
+    └── extensions.json
 
-9 directories, 35 files
+10 directories, 37 files
 ```
 
-### workflow and overveiw
+### workflow and overview
 
 **Workflow documented**: Communication workflow labeled in documentation from the
 official document goes as follows: 
@@ -74,5 +77,11 @@ recieve and transmit data.**
 | [MCP25625](./docs/MCP25625-CAN-Controller-Data-Sheet-20005282C.pdf) |  CAN 2.0 Only, integrated transceiver functionality (RXCAN and TXCAN to CANL/CANH, Maximum payload is 8 bytes per frame |   
 |[mcp25625-click](./docs/mcp25625-click-schematic-v100.pdf) | Current MCP25625 integrated transciever and controller that we're using for testing | 
 
+### stmcarcode branch 
+
+stmcarcode branch is for porting over into the actual car code respository and should only be manually edited
+
+
+---
 See [Cal Poly FSAE](https://github.com/CalPolyFSAE/)
 
