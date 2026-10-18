@@ -44,14 +44,6 @@ docs(readme): enhance readme and remove irrelevant notes
 - Note what hardware you tested on (e.g. Pi 4 + MCP25625 click).
 - Get at least one review from another member. If no member is available at least review with AI
 
-## Code Style
-
-- indent c/cpp and shell with tabs, shown 4 wide. `.editorconfig` sets this up in
-  most editors; in vscode, install the recommended editorconfig extension.
-- Use lf line endings. Scripts saved with crlf fail on the Pi with
-  `/bin/bash^M: bad interpreter`.
-- Optional: format c/cpp with `clang-format -i src/*.cpp src/*.h` (see `.clang-format`).
-
 ## Project Layout
 
 - `docs/` - setup guides, datasheets, and reference material

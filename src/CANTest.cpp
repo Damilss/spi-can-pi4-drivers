@@ -9,7 +9,7 @@
  * Please note that for testing, this program does not actual run through
  * of dataIntake.h, and dataIntake is not tested, only a segmented block
  * from dataIntake was copied and pasted into this function.
- *
+ * 
  */
 
 #include "can.h"
@@ -28,7 +28,7 @@
  * byte to a frame then writes the frame to the socketCANDevice, then
  * prints out message
  *
- * @return: int, exit status
+ * @return: int, exit status 
  */
 
 int main() {
@@ -36,19 +36,19 @@ int main() {
 	//tests class in can.h
 	SocketCANDevice can("can0");
 	/*************** CAN WRITE TEST *******************
-		for(int i = 0; i < 100; i++) {
-			can_frame writeFrame{};
+    	for(int i = 0; i < 100; i++) {
+        	can_frame writeFrame{};
 
-			writeFrame.can_id = 0x800;
+        	writeFrame.can_id = 0x800;
 		writeFrame.len = 5;
 
 		writeFrame.data[0] = 0xDE;
-			writeFrame.data[1] = 0xAD;
-			writeFrame.data[2] = 0xBE;
-			writeFrame.data[3] = 0xEF;
-			writeFrame.data[4] = static_cast<uint8_t>(i);
+        	writeFrame.data[1] = 0xAD;
+        	writeFrame.data[2] = 0xBE;
+        	writeFrame.data[3] = 0xEF;
+        	writeFrame.data[4] = static_cast<uint8_t>(i);
 
-			can.writeCANMessage(writeFrame);
+        	can.writeCANMessage(writeFrame);
 
 	}
 	************************************************/
@@ -56,33 +56,33 @@ int main() {
 
 		can_frame frame{};
 		// Read
-			if (can.readCANMessage(frame)) {
+        	if (can.readCANMessage(frame)) {
 
-					//set struct to pull time from
-					struct timespec ts;
+            		//set struct to pull time from
+            		struct timespec ts;
+            
+            		// get current time from systemwide clock and store it in ts
+            		clock_gettime(CLOCK_REALTIME, &ts);
 
-					// get current time from systemwide clock and store it in ts
-					clock_gettime(CLOCK_REALTIME, &ts);
-
-					// .timestamp is in nanoseconds (ns)
+            		// .timestamp is in nanoseconds (ns)
 			// each mulitplication operation needs their own seperate cast then
-					// add together
-					uint64_t sec_to_ms = (uint64_t)ts.tv_sec * 1000000000;
-					uint64_t ns_to_ms = (uint64_t)ts.tv_nsec;
+            		// add together
+            		uint64_t sec_to_ms = (uint64_t)ts.tv_sec * 1000000000;
+            		uint64_t ns_to_ms = (uint64_t)ts.tv_nsec;
 
-					uint64_t timestamp = sec_to_ms + ns_to_ms;
-
+            		uint64_t timestamp = sec_to_ms + ns_to_ms;
+			
 			// PRIu64 is format for uint64_t, instead of just normal %d
-					printf("ID: 0x%03X  len: %d  timestamp: %" PRIu64 ", Data:",
+            		printf("ID: 0x%03X  len: %d  timestamp: %" PRIu64 ", Data:",
 			frame.can_id & CAN_SFF_MASK,
 			frame.len,
-					timestamp);
+                	timestamp);
 
-					for (int i = 0; i < frame.len; ++i) {
+            		for (int i = 0; i < frame.len; ++i) {
 				printf(" %02X", frame.data[i]);
-					}
+            		}
 
 			printf("\n");
 		}
-	}
+	} 
 }
