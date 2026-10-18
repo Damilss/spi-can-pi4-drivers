@@ -3,7 +3,7 @@
 > This project is based for the Cal Poly FSAE project for the firmware
 > subsystem. 
 
-> ! WARNING
+> [!WARNING]
 > **STRIPPED FOR STMCARCODE. DO NOT EDIT UNLESS INSTRUCTED. DO NOT AUTOMATICALLY MERGE FROM MAIN**
 
 ## Objective
