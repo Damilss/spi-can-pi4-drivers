@@ -16,20 +16,19 @@
 │   └── Logger
 │       └── CAN
 │           └── source
-│               ├── can.cpp
-│               ├── can.h
-│               ├── CANTest.cpp
 │               ├── dataIntake.cpp
 │               ├── dataIntake.h
 │               ├── main.cpp
 │               └── main.h
+├── .gitignore
 ├── README.md
 └── shared
     └── drivers
         └── cm4
+            ├── can.cpp
+            └── can.h
 
 8 directories, 8 files
-
 ```
 
 See [Cal Poly FSAE](https://github.com/CalPolyFSAE/)
