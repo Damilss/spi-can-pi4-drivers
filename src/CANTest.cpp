@@ -76,15 +76,16 @@ int main(){
 			// PRIu64 is format for uint64_t, instead of just normal %d
 			printf(
                 "ID: 0x%03X  len: %d  timestamp: %" PRIu64 ", Data:",
-			    frame.can_id & CAN_SFF_MASK,
-			    frame.len, timestamp
+			    frame.can_id,
+			    frame.len, 
+				timestamp
             );
 
 			for (int i = 0; i < frame.len; ++i) {
 				printf(" %02X", frame.data[i]);
 			}
 
-		        printf("\n");
+		    printf("\n");
         }
     }
 }
