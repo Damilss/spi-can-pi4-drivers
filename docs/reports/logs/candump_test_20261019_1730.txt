@@ -1,0 +1,95 @@
+(1790840277.092814) can0 1C0#DEADBEEF63 R
+(1790840277.092899) can0 1C4#R8 R
+(1790840277.092959) can0 1C0#DEADBEEF63 R
+(1790840277.093030) can0 1C4#R8 R
+(1790840277.093088) can0 1C0#DEADBEEF63 R
+(1790840277.093174) can0 1C4#R8 R
+(1790840277.093218) can0 1C0#DEADBEEF63 R
+(1790840277.093310) can0 1C4#R8 R
+(1790840277.093346) can0 1C0#DEADBEEF63 R
+(1790840277.093445) can0 1C4#R8 R
+(1790840277.093488) can0 1C0#DEADBEEF63 R
+(1790840277.093576) can0 1C4#R8 R
+(1790840277.093625) can0 1C0#DEADBEEF63 R
+(1790840277.093716) can0 1C4#R8 R
+(1790840277.093763) can0 1C0#DEADBEEF63 R
+(1790840277.093855) can0 1C4#R8 R
+(1790840277.093895) can0 1C0#DEADBEEF63 R
+(1790840277.094000) can0 1C4#R8 R
+(1790840277.094029) can0 1C0#DEADBEEF63 R
+(1790840277.094123) can0 1C4#R8 R
+(1790840277.094181) can0 1C0#DEADBEEF63 R
+(1790840277.094273) can0 1C4#R8 R
+(1790840277.094306) can0 1C0#DEADBEEF63 R
+(1790840277.094397) can0 1C4#R8 R
+(1790840277.094470) can0 1C0#DEADBEEF63 R
+(1790840277.094533) can0 1C4#R8 R
+(1790840277.094597) can0 1C0#DEADBEEF63 R
+(1790840277.094671) can0 1C4#R8 R
+(1790840277.094721) can0 1C0#DEADBEEF63 R
+(1790840277.094808) can0 1C4#R8 R
+(1790840277.094856) can0 1C0#DEADBEEF63 R
+(1790840277.094945) can0 1C4#R8 R
+(1790840277.094992) can0 1C0#DEADBEEF63 R
+(1790840277.095080) can0 1C4#R8 R
+(1790840277.095129) can0 1C0#DEADBEEF63 R
+(1790840277.095219) can0 1C4#R8 R
+(1790840277.095265) can0 1C0#DEADBEEF63 R
+(1790840277.095353) can0 1C4#R8 R
+(1790840277.095405) can0 1C0#DEADBEEF63 R
+(1790840277.095491) can0 1C4#R8 R
+(1790840277.095540) can0 1C0#DEADBEEF63 R
+(1790840277.095626) can0 1C4#R8 R
+(1790840277.095676) can0 1C0#DEADBEEF63 R
+(1790840277.095762) can0 1C4#R8 R
+(1790840277.095811) can0 1C0#DEADBEEF63 R
+(1790840277.095898) can0 1C4#R8 R
+(1790840277.095960) can0 1C0#DEADBEEF63 R
+(1790840277.096037) can0 1C4#R8 R
+(1790840277.096084) can0 1C0#DEADBEEF63 R
+(1790840277.096171) can0 1C4#R8 R
+(1790840277.096225) can0 1C0#DEADBEEF63 R
+(1790840277.096309) can0 1C4#R8 R
+(1790840277.096360) can0 1C0#DEADBEEF63 R
+(1790840277.096446) can0 1C4#R8 R
+(1790840277.096494) can0 1C0#DEADBEEF63 R
+(1790840277.096581) can0 1C4#R8 R
+(1790840277.096630) can0 1C0#DEADBEEF63 R
+(1790840277.096721) can0 1C4#R8 R
+(1790840277.096767) can0 1C0#DEADBEEF63 R
+(1790840277.096855) can0 1C4#R8 R
+(1790840277.096904) can0 1C0#DEADBEEF63 R
+(1790840277.096995) can0 1C4#R8 R
+(1790840277.097042) can0 1C0#DEADBEEF63 R
+(1790840277.097130) can0 1C4#R8 R
+(1790840277.097176) can0 1C0#DEADBEEF63 R
+(1790840277.097264) can0 1C4#R8 R
+(1790840277.097313) can0 1C0#DEADBEEF63 R
+(1790840277.097401) can0 1C4#R8 R
+^C(1790840277.097450) can0 1C0#DEADBEEF63 R
+brandon@logger:~ $ sudo ip link set can0 down
+brandon@logger:~ $ sudo ip link set can0 type can bitrate 1000000 listen-only off
+brandon@logger:~ $ sudo ip link set can0 up
+brandon@logger:~ $ ip -details -statistics link show can0
+3: can0: <NOARP,UP,LOWER_UP,ECHO> mtu 16 qdisc pfifo_fast state UP mode DEFAULT group default qlen 10
+    link/can  promiscuity 0 allmulti 0 minmtu 16 maxmtu 16
+    can state ERROR-PASSIVE restart-ms 0
+          bitrate 1000000 sample-point 0.700
+          tq 100 prop-seg 3 phase-seg1 3 phase-seg2 3 sjw 1 brp 1
+          mcp251x: tseg1 3..16 tseg2 2..8 sjw 1..4 brp 1..64 brp_inc 1
+          clock 10000000
+          re-started bus-errors arbit-lost error-warn error-pass bus-off
+          0          0          0          1          1          0         numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 tso_max_size 65536 tso_max_segs 65535 gro_max_size 65536 gso_ipv4_max_size 65536 gro_ipv4_max_size 65536 parentbus spi parentdev spi0.0
+    RX:  bytes  packets errors dropped  missed   mcast
+      36964362 21482185 338163       3       0       0
+    TX:  bytes  packets errors dropped carrier collsns
+           508      102      0       0       0       0
+brandon@logger:~ $ candump -L -x can0
+^Cbrandon@logger:~ $
+brandon@logger:~ $ candump -L -x can0
+^Cbrandon@logger:~ $ dmesg | grep -iE 'mcp251|mcp256|can0"
+> ^C
+brandon@logger:~ $ dmesg | grep -iE 'mcp251|mcp256|can0'
+[    6.114348] mcp251x spi0.0 can0: MCP2515 successfully initialized.
+brandon@logger:~ $ cat /proc/device-tree/model
+Raspberry Pi 4 Model B Rev 1.5brandon@logger:~ $
