@@ -8,8 +8,8 @@ set -euo pipefail
 echo 'setting can0 DOWN...'
 sudo ip link set can0 down
 
-echo 'setting bitrate 500000 and turning loopback on'
-sudo ip link set can0 type can bitrate 500000 loopback on
+echo 'setting bitrate 1000000 and turning loopback on'
+sudo ip link set can0 type can bitrate 1000000 loopback on
 
 echo 'setting can0 UP'
 sudo ip link set can0 up
