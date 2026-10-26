@@ -1,4 +1,4 @@
-# spi-can-pi4-drivers
+#spi-can-pi4-drivers
 
 > This project is based for the Cal Poly FSAE project for the firmware
 > subsystem. 
@@ -10,7 +10,6 @@
 ## Repo Structure
 ```sh
 /spi-can-pi4-drivers
-├── .clang-format
 ├── compile_flags.txt
 ├── CONTRIBUTING.md
 ├── docs
@@ -22,17 +21,28 @@
 │   ├── refs
 │   │   ├── GPIO-pin-guide.png
 │   │   ├── MCP25625-CAN-Controller-Data-Sheet-20005282C.pdf
-│   │   └── mcp25625-click-schematic-v100.pdf
+│   │   ├── mcp25625-click-schematic-v100.pdf
+│   │   └── MIKROBUS MCP25625 wiring diagram.png
 │   ├── reports
 │   │   ├── 2026-09-23
 │   │   │   └── pi_config_9_23.md
+│   │   ├── 2026-10-14
+│   │   │   ├── terminal_logs.md
+│   │   │   └── test_validation_10_14.md
+│   │   ├── 2026-10-19
+│   │   │   └── logs
+│   │   │       ├── candump_test_20261019_1730.txt
+│   │   │       ├── candump_test_20261019_1826.txt
+│   │   │       ├── candump_test_20261019_1930.txt
+│   │   │       ├── CANTest_test_20261019_1730.txt
+│   │   │       ├── CANTest_test_20261019_1826.txt
+│   │   │       └── CANTest_test_20261019_1930.txt
 │   │   ├── README.md
 │   │   └── README_TEMPLATE.md
 │   ├── spi-setup.md
 │   ├── src-pican-cpp.md
-│   └── vcan0-setup.md
-├── .editorconfig
-├── .gitignore
+│   ├── vcan0-setup.md
+│   └── vcan0-setup-testing.md
 ├── README.md
 ├── scripts
 │   ├── can0-setup
@@ -48,16 +58,14 @@
 │   ├── check-active-networkmanagers.sh
 │   ├── checkbusstate.sh
 │   └── systemd-networkd-config.sh
-├── src
-│   ├── can.cpp
-│   ├── can.h
-│   ├── CANTest.cpp
-│   ├── dataIntake.cpp
-│   └── dataIntake.h
-└── .vscode
-    └── extensions.json
+└── src
+    ├── can.cpp
+    ├── can.hpp
+    ├── CANTest.cpp
+    ├── dataIntake.cpp
+    └── dataIntake.hpp
 
-10 directories, 37 files
+12 directories, 43 files
 ```
 
 ### workflow and overview
