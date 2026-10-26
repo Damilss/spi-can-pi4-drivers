@@ -53,7 +53,7 @@ class SocketCANDevice{
 		bool writeCANMessage(struct can_frame frame);
 
 
-		// DESTRUCTOR METHOD STILL REQUIRED
+		// TODO: DESTRUCTOR METHOD STILL REQUIRED
 };
 
 
